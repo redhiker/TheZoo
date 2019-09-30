@@ -1,0 +1,12 @@
+<h2>My Animals</h2>
+<ul class="animals">
+    <li *ngFor="let animal of animals">
+        <a routerLink="/detail/{{animal.id}}">
+            <span class="badge">{{animal.id}}</span>
+            <span class="kind">{{animal.kind}}</span>
+            <span class="kind">{{animal.name}}</span>            
+        </a> 
+        <button class="delete" title="Delete Animal"
+                (click)="delete(animal)">X</button>       
+    </li>
+</ul>

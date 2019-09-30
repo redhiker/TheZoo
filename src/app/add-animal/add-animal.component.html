@@ -1,0 +1,22 @@
+<div><br/>
+    <label> Type:
+        <select #animalType>
+           <option *ngFor="let type of animalTypes" [value]="type.value">
+               {{ type.display }}
+           </option>
+        </select>
+    </label><br/><br/>
+    <label>Animal Kind:
+        <input #animalKind />
+    </label><br/><br/>
+    <label>Animal Name:
+        <input #animalName />
+    </label><br/><br/>
+    <label>Note:
+        <input #animalNote />
+    </label><br/><br/>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button (click)="addAnimal(animalKind.value, animalName.value, animalNote.value, animalType.value); animalKind.value=''; animalName.value=''; animalNote.value='';">
+      Add Animal
+    </button>
+  </div>

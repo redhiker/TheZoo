@@ -1,0 +1,21 @@
+<div *ngIf="animal">
+    <h2>{{animal.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{animal.id}}</div>
+    <div>
+      <label>Name:
+        <input [(ngModel)]="animal.name" placeholder="Name"/>
+      </label><br/>
+      <label>Kind:
+          <input [(ngModel)]="animal.kind" placeholder="Kind"/>
+        </label><br/>
+        <label>Type:
+            <input [(ngModel)]="animal.type" placeholder="Type"/>
+          </label><br/>
+          <label>Note:
+            <input [(ngModel)]="animal.note" placeholder="Note"/>
+          </label><br/>
+    </div>
+    <button (click)="goBack()">Go Back</button>
+  </div>
+
+  <button (click)="save()">Save</button>

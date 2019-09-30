@@ -1,0 +1,16 @@
+<div class="grid grid-pad">
+  <a *ngFor="let animal of animals" class="col-1-4"
+      routerLink="/detail/{{animal.id}}">
+      <div *ngIf="animal.kind == 'Duck'; else notDuck">
+        <div class="module duck">
+          <h4>{{animal.name}}</h4>
+        </div>
+      </div>
+      <ng-template #notDuck>
+        <div class="module">
+          <h4>{{animal.name}}</h4>
+        </div>
+      </ng-template>
+
+  </a>
+</div>
