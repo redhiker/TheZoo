@@ -40,8 +40,10 @@ export class AnimalFormComponent {
   onSubmit() { 
     this.submitted = true;
     this.messageService.add('on submit...'+this.model.name + ' '+this.model.type);
-    this.animalService.addAnimal(this.model);
-    
+    this.animalService.addAnimal(this.model)
+      .subscribe(animal => {
+        this.animals.push(this.model);
+    });
   }
 
 }
